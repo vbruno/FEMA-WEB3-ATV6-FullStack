@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+        "fema"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ]
+}
