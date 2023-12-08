@@ -1,0 +1,19 @@
+GET http://localhost:3333/
+
+###
+
+GET http://localhost:3333/users
+
+###
+
+POST http://localhost:3333/users/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "email2@mail.com",
+    "password": "123456"
+}
+
+###
+
