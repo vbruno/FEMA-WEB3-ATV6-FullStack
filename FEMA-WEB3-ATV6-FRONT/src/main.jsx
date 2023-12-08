@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 
 import GlobalStyle from "./styles/globalStyles";
 
-import { Login } from "./page/Login";
-import { Register } from "./page/Register";
-import { Perfil } from "./page/Perfil";
+import { router } from "./routes";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalStyle />
-    <Login />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

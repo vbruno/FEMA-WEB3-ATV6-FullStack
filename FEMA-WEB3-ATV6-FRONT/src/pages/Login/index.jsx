@@ -1,23 +1,22 @@
 import { useState } from "react";
-import { FiUser, FiMail, FiLock, FiArrowLeft } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { FiMail, FiLock } from "react-icons/fi";
 
 import { Container, Form, Background } from "./styles";
-
 import { InputText } from "../../components/InputText";
 import { Button } from "../../components/Button";
 
-export function Register() {
-  const [name, setName] = useState("");
+export function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSignUp() {
-    if (!name || !email || !password) {
+  function handleSignIn() {
+    if (!email || !password) {
       return alert("Preencha todos os campos");
     }
 
     const dataUser = {
-      name,
       email,
       password,
     };
@@ -31,13 +30,8 @@ export function Register() {
         <h1>RocketMovies</h1>
         <p>Aplicação para acompanhar tudo que assistir.</p>
 
-        <h2>Crie sua conta</h2>
+        <h2>Faça seu login</h2>
 
-        <InputText
-          placeholder="Nome"
-          icon={FiUser}
-          onChange={(e) => setName(e.target.value)}
-        />
         <InputText
           placeholder="E-mail"
           icon={FiMail}
@@ -50,12 +44,9 @@ export function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button title={"Cadastrar"} onClick={handleSignUp} />
+        <Button title={"Entrar"} onClick={handleSignIn} />
 
-        <button>
-          <FiArrowLeft />
-          Voltar para o login
-        </button>
+        <button onClick={() => navigate("/register")}>Criar conta</button>
       </Form>
 
       <Background />

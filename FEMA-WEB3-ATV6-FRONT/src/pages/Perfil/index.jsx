@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Container, Form, Avatar } from "./styles";
 
@@ -8,6 +9,7 @@ import { Button } from "../../components/Button";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 export function Perfil() {
+  const navigate = useNavigate();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [oldPassword, setOldPassword] = useState("");
@@ -40,10 +42,14 @@ export function Perfil() {
     setAvatar(imagePreview);
   }
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   return (
     <Container>
       <header>
-        <button>
+        <button onClick={handleBack}>
           <FiArrowLeft />
           <span>Voltar</span>
         </button>
