@@ -1,9 +1,8 @@
 // eslint-disable-next-line
-const { PrismaClient } = require('@prisma/client');
 const { hash } = require('bcryptjs');
 const AppError = require('../utils/AppError');
 
-const prisma = new PrismaClient();
+const prisma = require('../db/prisma');
 
 // eslint-disable no-unused-vars
 class UsersController {

@@ -1,0 +1,18 @@
+GET http://localhost:3333/
+
+###
+
+GET http://localhost:3333/sessions
+
+###
+
+POST http://localhost:3333/sessions/token
+Content-Type: application/json
+
+{
+    "email": "email2@mail.com",
+    "password": "123456"
+}
+
+###
+
