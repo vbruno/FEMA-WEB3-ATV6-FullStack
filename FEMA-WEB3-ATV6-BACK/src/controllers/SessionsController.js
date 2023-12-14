@@ -33,19 +33,21 @@ class SessionsController {
       throw new AppError('Erro usuário ou senha invalida', 400);
     }
 
-    const { expiresIn, secret } = authConfig.jwt;
+    // const { expiresIn, secret } = authConfig.jwt;
 
-    const token = jwt.sign({ user: userExist.name }, secret, {
+    const token = jwt.sign({ user: userExist.name }, 'hauhauhauhauh', {
       subject: String(userExist.id),
-      expiresIn,
+      expiresIn: '1d',
     });
 
-    delete userExist.password;
+    console.log(token);
 
-    return response.json({
-      user: userExist,
-      token,
-    });
+    // delete userExist.password;
+
+    // return response.json({
+    //   user: userExist,
+    //   token,
+    // });
   }
 }
 
